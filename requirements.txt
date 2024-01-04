@@ -6,3 +6,5 @@ scikit-learn==1.1.1
 seaborn
 dataframe-image
 gradio==3.14
+keras
+tensorflow
