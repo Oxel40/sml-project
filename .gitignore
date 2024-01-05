@@ -166,3 +166,5 @@ temp_model.*
 
 temp_scaler
 temp_scaler.*
+
+*.png
