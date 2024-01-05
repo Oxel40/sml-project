@@ -72,15 +72,13 @@ def main():
     # the insertion was done asynchronously, so it will take ~1 min to land on App
     history_df = pd.concat([history_df, monitor_df])
 
+    history_df["datetime"] = pd.to_datetime(history_df["datetime"])
+    history_df = history_df.sort_values("datetime")
+    history_df = history_df.set_index("datetime")
 
     df_recent = history_df.tail(5)
     dfi.export(df_recent, './df_recent.png', table_conversion = 'matplotlib')
     dataset_api.upload("./df_recent.png", "Resources/images", overwrite=True)
-
-    history_df["datetime"] = pd.to_datetime(history_df["datetime"])
-
-    history_df = history_df.sort_values("datetime")
-    history_df = history_df.set_index("datetime")
 
     print(history_df.info())
     print(history_df.head())
