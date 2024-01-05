@@ -1,5 +1,5 @@
 ---
-title: Wine
+title: Temperature
 emoji: 🐢
 colorFrom: purple
 colorTo: green
