@@ -29,13 +29,13 @@ def get_window(window_size):
     temp_df = temp_df.asfreq('h')
     temp_df = temp_df.drop(columns=["id"])
 
-    return scaler.transform(temp_df.values[-window_size:])
+    return scaler.transform(temp_df.values[-window_size:]), temp_df.index.max()
 
 def temp_prediction():
     window_size = 24
     duration = 24
 
-    data = get_window(window_size)
+    data, latest_timestamp = get_window(window_size)
     #runup = scaler.inverse_transform(data.copy())
     for _ in range(duration):
         inp = data[-window_size:].flatten('F').reshape((1, -1))
@@ -48,7 +48,7 @@ def temp_prediction():
     fig = plt.figure()
     ax = fig.add_subplot(111)
     res["Temperature"].plot(ax=ax, label="Predicted Temperature")
-    plt.xlabel(f"Hours from {data.index.max()}")
+    plt.xlabel(f"Hours from {latest_timestamp}")
     plt.ylabel("Temperature (*C)")
     plt.legend()
     return fig
