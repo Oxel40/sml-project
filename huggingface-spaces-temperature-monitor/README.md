@@ -1,5 +1,5 @@
 ---
-title: Wine Monitoring
+title: Temperature Monitoring
 emoji: 💻
 colorFrom: blue
 colorTo: pink
