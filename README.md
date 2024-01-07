@@ -1,5 +1,8 @@
 Carl Peterson & Erik Persson
 
+Huggingface app: [Temperature](https://huggingface.co/spaces/Oxel40/Temperature)
+Huggingface monitor: [Temperature-monitor](https://huggingface.co/spaces/Oxel40/Temperature-monitor)
+
 # ID2223 Project - Predicting air temperature in Stockholm
 In this project we have a serverless ML system that predicts the air temperature in Stockholm for every hour in the upcoming 24 hours. 
 
